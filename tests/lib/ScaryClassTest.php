@@ -42,7 +42,7 @@ class ColorMathTest extends \PHPUnit_Framework_TestCase {
                 'age'     => 70,
                 'drinker' => false,
                 'smoker'  => false,
-                'extra'   => '0'
+                'extra'   => null
             ),
             array(
                 'name'    => 'Franklin',
@@ -86,7 +86,7 @@ class ColorMathTest extends \PHPUnit_Framework_TestCase {
                 'age'     => 70,
                 'drinker' => false,
                 'smoker'  => false,
-                'extra'   => '0',
+                'extra'   => 0,
                 'cost'    => 122
             ),
             array(

@@ -17,7 +17,16 @@
  * This is intentionally poorly formatted code for the purpose of education
  * Be afraid, be very afraid.
  *
- * It really calculates insurance costs for users of a certain type
+ * What the developer was told that it really should do:
+ *
+ * Take in an array of client information that is end user generated (not clean)
+ * Calculates insurance costs for users based on their responses.
+ * Make the array it calculates retrievable.
+ *
+ * If for some reason data cannot be processed then the code should indicate a
+ * failure and a reason for that failure.
+ *
+ * Preferred coding style standard for this application is PSR2
  *
  * @category LittleCodeShopOfHorrors/lib
  * @package  Core
@@ -45,20 +54,14 @@ class ScaryClass {
             $cost = 100; // Base rate
             $bonus = 0;  // Additional flat fee
             $multiplier = 100; // multiplier of base rate in percents
-
-            if ($v['age'] < 18)
-            return 'Too Young'; // error, we don't sell insurance to children
-
-
+            if ($v['age'] < 18) { echo 'Too Young'; return 'error'; }
             if ($v['age'] >= 25) {
                 if ($v['age'] >= 60) {
                     $multiplier = $multiplier + 10;
                 } else {
                     $multiplier = $multiplier;
                 }
-            } else {
-                $multiplier = $multiplier + 20;
-            }
+            } else { $multiplier = $multiplier + 20; }
 
             if ($v['sex'] = $this->male($v['sex'])) {
                 $bonus = $bonus + 18;
@@ -66,17 +69,11 @@ class ScaryClass {
                 $bonus = $bonus + 12;
             }
 
-            if ($v['smoker'])
-            $multiplier = $multiplier + 10;
-
-
-            if (true == $v['drinker'] && $v['smoker'] == false)
-            $multiplier = $multiplier + 10;
-
-
+            if ($v['smoker']) $multiplier = $multiplier + 10;
+            if (true == $v['drinker'] && $v['smoker'] == false) $multiplier = $multiplier + 10;
             $this->dataset[$k]['cost'] = $cost * $multiplier / 100 + $bonus + $v['extra'];
         }
-
+        return 'success';
     }
 
     private function male($string) {
