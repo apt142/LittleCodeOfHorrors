@@ -1,0 +1,16 @@
+{
+  "name" : "apt142/LittleCodeOfHorrors",
+  "description" : "Badly written code for teaching purposes",
+  "minimum-stability" : "stable",
+  "license" : "MIT",
+  "authors" : [
+    {
+      "name" : "Cris Bettis",
+      "email" : "apt142@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*",
+    "squizlabs/php_codesniffer": "1.*"
+  }
+}
